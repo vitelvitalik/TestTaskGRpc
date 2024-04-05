@@ -1,0 +1,18 @@
+syntax = "proto3";
+package com.test.task;
+
+message ServerRequest {
+
+  int32 firstValue = 1;
+  int32 lastValue = 2;
+}
+
+message ServerResponse {
+
+  int32 currentValue = 2;
+}
+
+service TestTaskService {
+
+  rpc getValues(ServerRequest) returns (stream ServerResponse);
+}
